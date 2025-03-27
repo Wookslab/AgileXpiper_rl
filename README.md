@@ -7,7 +7,7 @@ chat gpt 를 활용하여 확장가능한 기초적인 강화학습 환경 구�
 
 ubuntu 20.04 ros noetic
 
-conda 24.5.5
+conda 24.5.0
 
 Cuda version 12.6
 
