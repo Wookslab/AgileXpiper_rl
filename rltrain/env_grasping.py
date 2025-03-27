@@ -71,21 +71,28 @@ class GraspingEnv:
 
     def step(self, actions):
         # 강화학습 환경에서 매 타임스텝마다 실행할 동작
-        # 현재는 간단히 관측값, 보상, 완료 여부 반환하는 형식으로 예시
+        # 관측 및 grasp 성공 여부 기반 보상 반환
         observations = self.reset()
         rewards = torch.zeros((self.num_envs,), device=self.device)
         dones = torch.zeros((self.num_envs,), dtype=torch.bool, device=self.device)
+
+        for i in range(self.num_envs):
+            box_handle = self.boxes[i]
+            box_state = self.gym.get_actor_rigid_body_states(self.envs[i], box_handle, gymapi.STATE_POS)
+            box_height = box_state['pose']['p']['z']
+
+            if box_height > 0.1:
+                rewards[i] = 1.0
+
         return observations, rewards, dones
 
     def get_obs_size(self):
         # 관측 벡터의 크기 반환
-        # 예: 모든 DOF의 개수라고 가정
         dof_state = self.gym.get_actor_dof_states(self.envs[0], self.robots[0], gymapi.STATE_ALL)
         return dof_state['pos'].shape[0]
 
     def get_act_size(self):
         # 행동 벡터의 크기 반환
-        # 예: 관절 수와 동일하게 설정
         dof_props = self.gym.get_actor_dof_properties(self.envs[0], self.robots[0])
         return dof_props.shape[0]
 
