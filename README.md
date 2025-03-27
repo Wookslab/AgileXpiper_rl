@@ -1,7 +1,8 @@
 # AgileXpiper_rl
 agileX piper를 활용한 강화학습 기초 환경 세팅(no viewer)
-chat gpt 를 활용하여 확장가능한 기초적인 강화학습 환경 구출
+chat gpt 를 활용하여 확장가능한 기초적인 강화학습 환경 구축
 
+urdf -> https://github.com/agilexrobotics/piper_ros/tree/noetic/src/piper_description 참고
 
 <Framework>
   
