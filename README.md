@@ -28,3 +28,15 @@ urdf -> https://github.com/agilexrobotics/piper_ros/tree/noetic/src/piper_descri
 <Policy>
   
 ![policy](https://github.com/user-attachments/assets/8616f610-8b98-475e-940d-0391ea975e86)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+학습 정책 결과 저장 및 실행, 보상 점수
+
+![studypolicy](https://github.com/user-attachments/assets/bbfee059-92fd-47f7-a9a7-f5ae8fbe9989)
+
+![policysave](https://github.com/user-attachments/assets/2559d4c2-25ba-4515-80a5-f613853279c5)
+
+![reward(play)](https://github.com/user-attachments/assets/7c9c022b-3118-4afe-acd1-b68fdb52cc9d)
+
+아직 학습 action 부분은 미구현이며 이에따라 움직이지는 않는다.
