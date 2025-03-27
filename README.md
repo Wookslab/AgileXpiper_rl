@@ -1,7 +1,11 @@
 # AgileXpiper_rl
 agileX piper를 활용한 강화학습 기초 환경 세팅(no viewer)
+
 chat gpt 를 활용하여 확장가능한 기초적인 강화학습 환경 구축
+
 현재 코드 추가 및 버그 수정중
+
+학습 기록용 코드입니다.
 
 <개발 환경>
 
